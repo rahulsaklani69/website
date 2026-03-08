@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className="bg-slate-50 dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 py-16">
+        <footer id="about" className="bg-slate-50 dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 py-16">
             <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12">
                 <div className="col-span-2">
                     <div className="flex items-center gap-3 mb-6">
@@ -26,10 +26,9 @@ const Footer = () => {
                 <div>
                     <h4 className="font-bold text-slate-900 dark:text-white mb-6 uppercase tracking-widest text-xs">Quick Links</h4>
                     <ul className="space-y-4 text-sm text-slate-500 font-medium">
-                        <li><a className="hover:text-primary" href="#">Home</a></li>
-                        <li><a className="hover:text-primary" href="#">All Courses</a></li>
-                        <li><a className="hover:text-primary" href="#">Success Stories</a></li>
-                        <li><a className="hover:text-primary" href="#">Contact Us</a></li>
+                        <li><a className="hover:text-primary cursor-pointer">All Courses</a></li>
+                        <li><a className="hover:text-primary cursor-pointer">Success Stories</a></li>
+                        <li><a className="hover:text-primary cursor-pointer">Contact Us</a></li>
                     </ul>
                 </div>
                 <div>
@@ -44,7 +43,7 @@ const Footer = () => {
                         </li>
                         <li className="flex items-center gap-3">
                             <span className="material-symbols-outlined text-primary">mail</span>
-                            admissions@hogwartsclasses.edu
+                            thehogwartsclass@gmail.com
                         </li>
                     </ul>
                 </div>
