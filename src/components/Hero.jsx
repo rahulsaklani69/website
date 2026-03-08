@@ -2,7 +2,7 @@ import React from 'react';
 
 const Hero = () => {
     return (
-        <section className="relative overflow-hidden pt-20 pb-32 magical-glow">
+        <section id="home" className="relative overflow-hidden pt-20 pb-32 magical-glow">
             <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
                 <div className="space-y-8">
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest">
@@ -16,10 +16,10 @@ const Hero = () => {
                         Master complex concepts with our expert faculty. Join the premier coaching institute designed specifically for school toppers and aspiring Chartered Accountants.
                     </p>
                     <div className="flex flex-wrap gap-4 pt-4">
-                        <button className="bg-accent hover:bg-yellow-500 text-primary px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-xl shadow-accent/30 flex items-center gap-2">
+                        <a href="#enquiry" className="bg-accent hover:bg-yellow-500 text-primary px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-xl shadow-accent/30 flex items-center justify-center gap-2">
                             Book a Free Demo Class
                             <span className="material-symbols-outlined">bolt</span>
-                        </button>
+                        </a>
                     </div>
                 </div>
                 <div className="relative">

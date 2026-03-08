@@ -23,7 +23,7 @@ const ContactCTA = () => {
         }
     };
     return (
-        <section className="py-24 bg-background-light dark:bg-slate-900">
+        <section id="enquiry" className="py-24 bg-background-light dark:bg-slate-900">
             <div className="max-w-4xl mx-auto px-6">
                 <div className="bg-white dark:bg-background-dark rounded-3xl shadow-2xl overflow-hidden grid md:grid-cols-5">
                     <div className="md:col-span-2 bg-primary p-12 text-white flex flex-col justify-between">

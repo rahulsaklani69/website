@@ -10,7 +10,7 @@ const specialities = [
 
 const Speciality = () => {
     return (
-        <section className="py-24 bg-background-light dark:bg-slate-800">
+        <section id="speciality" className="py-24 bg-background-light dark:bg-slate-800">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="text-center mb-16 space-y-4">
                     <h2 className="text-4xl font-extrabold text-primary dark:text-white">Our Speciality</h2>

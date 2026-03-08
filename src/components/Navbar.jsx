@@ -13,15 +13,15 @@ const Navbar = () => {
                     </h1>
                 </div>
                 <nav className="hidden md:flex items-center gap-10">
-                    <a className="text-sm font-semibold hover:text-primary transition-colors" href="#">Home</a>
+                    <a className="text-sm font-semibold hover:text-primary transition-colors" href="#home">Home</a>
                     <a className="text-sm font-semibold hover:text-primary transition-colors" href="#courses">Courses</a>
-                    <a className="text-sm font-semibold hover:text-primary transition-colors" href="#features">Features</a>
-                    <a className="text-sm font-semibold hover:text-primary transition-colors" href="#about">About</a>
+                    <a className="text-sm font-semibold hover:text-primary transition-colors" href="#speciality">Speciality</a>
+                    <a className="text-sm font-semibold hover:text-primary transition-colors" href="#enquiry">Enquiry</a>
                 </nav>
                 <div className="flex items-center gap-4">
-                    <button className="bg-accent hover:bg-yellow-500 text-primary px-6 py-2.5 rounded-full font-bold text-sm transition-all shadow-lg shadow-accent/20">
+                    <a href="#enquiry" className="bg-accent hover:bg-yellow-500 text-primary px-6 py-2.5 rounded-full font-bold text-sm transition-all shadow-lg shadow-accent/20">
                         Join the Magic
-                    </button>
+                    </a>
                 </div>
             </div>
         </header>
