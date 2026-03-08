@@ -5,8 +5,8 @@ const Navbar = () => {
         <header className="sticky top-0 z-50 w-full bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10">
             <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                    <div className="text-primary dark:text-accent">
-                        <span className="material-symbols-outlined text-4xl">school</span>
+                    <div className="w-10 h-10 bg-primary flex justify-center items-center text-accent font-bold text-2xl rounded-sm">
+                        H
                     </div>
                     <h1 className="text-xl font-extrabold tracking-tight text-primary dark:text-slate-100">
                         THE HOGWARTS <span className="text-accent">CLASSES</span>

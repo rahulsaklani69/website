@@ -6,7 +6,9 @@ const Footer = () => {
             <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12">
                 <div className="col-span-2">
                     <div className="flex items-center gap-3 mb-6">
-                        <span className="material-symbols-outlined text-3xl text-primary">school</span>
+                        <div className="w-10 h-10 bg-primary flex justify-center items-center text-accent font-bold text-2xl rounded-sm">
+                            H
+                        </div>
                         <h2 className="text-xl font-extrabold tracking-tight text-primary dark:text-slate-100">HOGWARTS <span className="text-accent">CLASSES</span></h2>
                     </div>
                     <p className="text-slate-500 max-w-sm leading-relaxed">
@@ -38,7 +40,7 @@ const Footer = () => {
                         </li>
                         <li className="flex items-center gap-3">
                             <span className="material-symbols-outlined text-primary">call</span>
-                            +91 970961056
+                            +91 9720961056
                         </li>
                         <li className="flex items-center gap-3">
                             <span className="material-symbols-outlined text-primary">mail</span>

@@ -1,6 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const ContactCTA = () => {
+    const [status, setStatus] = useState('');
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setStatus('Submitting...');
+        const form = e.target;
+        const formData = new FormData(form);
+
+        try {
+            await fetch('https://script.google.com/macros/s/AKfycbwLxWQa22i0F0Dz17uN_G2Cg9dC-Oye7-MFiV7Uu4azYmuAAJ1s6s_C3gabnfPrQdSV/exec', {
+                method: 'POST',
+                body: formData
+            });
+            setStatus('Enquiry Sent Successfully!');
+            form.reset();
+            setTimeout(() => setStatus(''), 5000);
+        } catch (error) {
+            console.error('Error submitting form', error);
+            setStatus('Error sending enquiry. Please try again.');
+        }
+    };
     return (
         <section className="py-24 bg-background-light dark:bg-slate-900">
             <div className="max-w-4xl mx-auto px-6">
@@ -25,29 +46,31 @@ const ContactCTA = () => {
                         </div>
                     </div>
                     <div className="md:col-span-3 p-12">
-                        <form action="#" className="space-y-6">
+                        <form onSubmit={handleSubmit} className="space-y-6">
                             <div>
                                 <label className="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Full Name</label>
-                                <input className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="Harry Potter" type="text" />
+                                <input name="FullName" required className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="Harry Potter" type="text" />
                             </div>
                             <div>
                                 <label className="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Class / Program</label>
-                                <select className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-2 focus:ring-primary outline-none transition-all">
-                                    <option>Select your class</option>
-                                    <option>9th Grade</option>
-                                    <option>10th Grade</option>
-                                    <option>11th Grade</option>
-                                    <option>12th Grade</option>
-                                    <option>CA Foundation</option>
+                                <select name="ClassProgram" required className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-2 focus:ring-primary outline-none transition-all">
+                                    <option value="">Select your class</option>
+                                    <option value="9th Grade">9th Grade</option>
+                                    <option value="10th Grade">10th Grade</option>
+                                    <option value="11th Grade">11th Grade</option>
+                                    <option value="12th Grade">12th Grade</option>
+                                    <option value="CA Foundation">CA Foundation</option>
                                 </select>
                             </div>
                             <div>
                                 <label className="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Phone Number</label>
-                                <input className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="+91 00000 00000" type="tel" />
+                                <input name="PhoneNumber" required className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="+91 00000 00000" type="tel" />
                             </div>
-                            <button className="w-full bg-accent hover:bg-yellow-500 text-primary font-bold py-4 rounded-xl shadow-lg shadow-accent/20 transition-all text-lg" type="submit">
-                                Send Enquiry
+                            <button disabled={status === 'Submitting...'} className="w-full bg-accent hover:bg-yellow-500 text-primary font-bold py-4 rounded-xl shadow-lg shadow-accent/20 transition-all text-lg disabled:opacity-75" type="submit">
+                                {status === 'Submitting...' ? 'Sending...' : 'Send Enquiry'}
                             </button>
+                            {status === 'Enquiry Sent Successfully!' && <p className="text-green-600 font-bold text-center mt-2">{status}</p>}
+                            {status === 'Error sending enquiry. Please try again.' && <p className="text-red-600 font-bold text-center mt-2">{status}</p>}
                         </form>
                     </div>
                 </div>
