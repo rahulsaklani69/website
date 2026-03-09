@@ -83,11 +83,6 @@ const Courses = () => {
     return (
         <section className="py-24 bg-white dark:bg-background-dark" id="courses">
             <div className="max-w-7xl mx-auto px-6">
-                <div className="text-center mb-16 space-y-4">
-                    <h2 className="text-4xl font-extrabold text-primary dark:text-white">Our Enchanted Courses</h2>
-                    <p className="text-slate-500 max-w-2xl mx-auto">Tailored programs designed to transform your academic journey into a success story.</p>
-                </div>
-
                 {/* Motivation Banner */}
                 <div className="bg-primary/5 dark:bg-slate-800/50 rounded-3xl p-10 mb-16 text-center shadow-inner border border-primary/10">
                     <h3 className="text-2xl md:text-3xl font-bold text-primary dark:text-white mb-4">
@@ -106,6 +101,11 @@ const Courses = () => {
                             <span className="material-symbols-outlined">help</span>
                         </a>
                     </div>
+                </div>
+
+                <div className="text-center mb-16 space-y-4">
+                    <h2 className="text-4xl font-extrabold text-primary dark:text-white">Our Enchanted Courses</h2>
+                    <p className="text-slate-500 max-w-2xl mx-auto">Tailored programs designed to transform your academic journey into a success story.</p>
                 </div>
 
                 <div className="grid md:grid-cols-3 gap-8 items-start">
