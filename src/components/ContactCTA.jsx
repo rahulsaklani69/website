@@ -40,18 +40,6 @@ const ContactCTA = () => {
                                     <span className="text-sm font-semibold">Personalized counseling session</span>
                                 </div>
                             </div>
-
-                            <div className="mt-8">
-                                <p className="text-sm text-slate-300 font-semibold mb-3">Connect with us directly:</p>
-                                <div className="flex gap-4">
-                                    <a href="https://www.instagram.com/thehogwartsclasses?igsh=NHI0dXJvenVmY2Vk" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-accent hover:text-primary hover:border-transparent transition-all transform hover:scale-110">
-                                        <span className="material-symbols-outlined text-2xl">camera_alt</span>
-                                    </a>
-                                    <a href="https://t.me/thehogwartsclasses" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-accent hover:text-primary hover:border-transparent transition-all transform hover:scale-110">
-                                        <span className="material-symbols-outlined text-2xl">send</span>
-                                    </a>
-                                </div>
-                            </div>
                         </div>
                         <div className="text-[10px] text-slate-400 mt-12">
                             * We value your privacy. Your contact details are safe with us and will only be used for academic communication.
