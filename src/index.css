@@ -40,4 +40,67 @@
   .magical-glow {
     background: radial-gradient(circle at 50% 50%, rgba(26, 34, 127, 0.05) 0%, rgba(255, 193, 7, 0.02) 100%);
   }
+
+  /* Custom Animations */
+  @keyframes golden-pulse {
+
+    0%,
+    100% {
+      box-shadow: 0 0 15px 2px rgba(255, 193, 7, 0.4);
+      transform: scale(1);
+    }
+
+    50% {
+      box-shadow: 0 0 35px 8px rgba(255, 193, 7, 0.8);
+      transform: scale(1.05);
+    }
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-golden-pulse {
+    animation: golden-pulse 2s infinite ease-in-out;
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .stagger-1 {
+    animation-delay: 0.1s;
+  }
+
+  .stagger-2 {
+    animation-delay: 0.3s;
+  }
+
+  .stagger-3 {
+    animation-delay: 0.5s;
+  }
+
+  /* Accordion Slide Down transition */
+  .accordion-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s ease-out;
+  }
+
+  .accordion-content.open {
+    grid-template-rows: 1fr;
+  }
+
+  .accordion-inner {
+    overflow: hidden;
+  }
 }

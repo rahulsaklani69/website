@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const coursesData = [
     {
@@ -40,6 +41,38 @@ const coursesData = [
     }
 ];
 
+const CourseCard = ({ course, index, openId, toggleAccordion }) => {
+    const [ref, isVisible] = useScrollAnimation(0.1);
+
+    return (
+        <div
+            ref={ref}
+            className={`glass-card rounded-2xl p-8 flex flex-col gap-6 shadow-xl hover:-translate-y-2 hover:scale-105 hover:shadow-[0_0_30px_rgba(255,193,7,0.4)] transition-all duration-500 border-t-4 ${course.borderColor} ${isVisible ? 'animate-fade-in-up opacity-100' : 'opacity-0'} stagger-${(index % 3) + 1}`}
+        >
+            <div className="w-full h-48 rounded-xl bg-center bg-cover" style={{ backgroundImage: course.bgImage }}></div>
+            <div>
+                <h3 className="text-2xl font-bold text-primary mb-2">{course.title}</h3>
+                <p className="text-slate-600 dark:text-slate-400">{course.shortDesc}</p>
+
+                <div className={`accordion-content ${openId === course.id ? 'open' : ''}`}>
+                    <div className="accordion-inner">
+                        {course.syllabus}
+                    </div>
+                </div>
+            </div>
+            <button
+                onClick={() => toggleAccordion(course.id)}
+                className="mt-auto w-full py-3 rounded-lg border-2 border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all flex justify-center items-center gap-2"
+            >
+                <span>{openId === course.id ? 'Hide Syllabus' : 'View Syllabus'}</span>
+                <span className={`material-symbols-outlined transition-transform ${openId === course.id ? 'rotate-180' : ''}`}>
+                    expand_more
+                </span>
+            </button>
+        </div>
+    );
+};
+
 const Courses = () => {
     const [openId, setOpenId] = useState(null);
 
@@ -54,26 +87,36 @@ const Courses = () => {
                     <h2 className="text-4xl font-extrabold text-primary dark:text-white">Our Enchanted Courses</h2>
                     <p className="text-slate-500 max-w-2xl mx-auto">Tailored programs designed to transform your academic journey into a success story.</p>
                 </div>
-                <div className="grid md:grid-cols-3 gap-8">
-                    {coursesData.map((course) => (
-                        <div key={course.id} className={`glass-card rounded-2xl p-8 flex flex-col gap-6 shadow-xl hover:shadow-2xl transition-all border-t-4 ${course.borderColor}`}>
-                            <div className="w-full h-48 rounded-xl bg-center bg-cover" style={{ backgroundImage: course.bgImage }}></div>
-                            <div>
-                                <h3 className="text-2xl font-bold text-primary mb-2">{course.title}</h3>
-                                <p className="text-slate-600 dark:text-slate-400">{course.shortDesc}</p>
 
-                                {openId === course.id && course.syllabus}
-                            </div>
-                            <button
-                                onClick={() => toggleAccordion(course.id)}
-                                className="mt-auto w-full py-3 rounded-lg border-2 border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all flex justify-center items-center gap-2"
-                            >
-                                <span>{openId === course.id ? 'Hide Syllabus' : 'View Syllabus'}</span>
-                                <span className={`material-symbols-outlined transition-transform ${openId === course.id ? 'rotate-180' : ''}`}>
-                                    expand_more
-                                </span>
-                            </button>
-                        </div>
+                {/* Motivation Banner */}
+                <div className="bg-primary/5 dark:bg-slate-800/50 rounded-3xl p-10 mb-16 text-center shadow-inner border border-primary/10">
+                    <h3 className="text-2xl md:text-3xl font-bold text-primary dark:text-white mb-4">
+                        Don't just dream of success, achieve it with Hogwarts!
+                    </h3>
+                    <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto mb-8 text-lg">
+                        Enroll now to transform your academic journey. Our expert-led courses are designed to make you a topper.
+                    </p>
+                    <div className="flex flex-wrap justify-center gap-4">
+                        <a href="#enquiry" className="bg-accent hover:bg-yellow-500 text-primary px-8 py-3 rounded-xl font-bold transition-all shadow-lg flex items-center gap-2 transform hover:scale-105">
+                            Enroll Now
+                            <span className="material-symbols-outlined">auto_awesome</span>
+                        </a>
+                        <a href="#enquiry" className="bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 text-primary dark:text-white border-2 border-primary dark:border-slate-700 px-8 py-3 rounded-xl font-bold transition-all flex items-center gap-2 transform hover:scale-105">
+                            Enquiry
+                            <span className="material-symbols-outlined">help</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div className="grid md:grid-cols-3 gap-8">
+                    {coursesData.map((course, index) => (
+                        <CourseCard
+                            key={course.id}
+                            course={course}
+                            index={index}
+                            openId={openId}
+                            toggleAccordion={toggleAccordion}
+                        />
                     ))}
                 </div>
             </div>

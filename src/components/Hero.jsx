@@ -16,7 +16,7 @@ const Hero = () => {
                         Master complex concepts with our expert faculty. Join the premier coaching institute designed specifically for school toppers and aspiring Chartered Accountants.
                     </p>
                     <div className="flex flex-wrap gap-4 pt-4">
-                        <a href="#enquiry" className="bg-accent hover:bg-yellow-500 text-primary px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-xl shadow-accent/30 flex items-center justify-center gap-2">
+                        <a href="#about" className="bg-accent hover:bg-yellow-500 text-primary px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-xl shadow-accent/30 flex items-center justify-center gap-2 hover:-translate-y-1">
                             Book a Free Demo Class
                             <span className="material-symbols-outlined">bolt</span>
                         </a>
